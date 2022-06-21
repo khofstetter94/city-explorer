@@ -21,3 +21,33 @@ Creating a React app to be able to grab information for different cities
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+
+Name of feature: Locations
+
+Estimate of time needed to complete: 3 hours
+
+Start time: 2:50 PM
+
+Finish time: 5:00 PM
+
+Actual time needed to complete: 2 hours and 10 minutes
+
+Name of feature: Map
+
+Estimate of time needed to complete: 1.5 hours
+
+Start time: 6:00 PM
+
+Finish time: 7:00 PM
+
+Actual time needed to complete: 1 hour
+
+Name of feature: Errors
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 7:15 PM
+
+Finish time: 8:30 PM
+
+Actual time needed to complete: 1 hour and 15 minutes
