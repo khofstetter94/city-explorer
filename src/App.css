@@ -8,9 +8,16 @@ body {
 h1 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 70px;
+  margin-bottom: 0px;
+}
+
+ol {
+  width: 50%;
 }
 
 li {
+  display: flex;
+  flex-direction: column;
   border: 1px solid black;
   line-height: 30px;
   margin-top: 20px;
@@ -20,4 +27,16 @@ li {
 .fw-bold {
   font-size: x-large;
   font-weight: bold;
+}
+
+button {
+  background-color: rgb(69, 69, 154);
+  color: white;
+  margin-left: 10px;
+  height: 25px
+}
+
+input {
+  background-color: rgb(221, 221, 235);
+  height: 25px;
 }
