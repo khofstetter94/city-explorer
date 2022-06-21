@@ -5,6 +5,12 @@ body {
   justify-content: center;
 }
 
+main {
+ text-align: center;
+ display: flex;
+ flex-direction: column;
+}
+
 h1 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 70px;
@@ -12,13 +18,16 @@ h1 {
 }
 
 ol {
-  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 li {
   display: flex;
   flex-direction: column;
   border: 1px solid black;
+  width: min-content;
   line-height: 30px;
   margin-top: 20px;
   padding: 5px;

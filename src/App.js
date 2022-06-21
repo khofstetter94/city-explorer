@@ -9,7 +9,9 @@ class App extends React.Component {
     super(props);
     this.state = {
       city: '',
-      cityResults: []
+      cityResults: [],
+      error: false,
+      errorMessage: ''
     };
   }
 
@@ -21,11 +23,18 @@ class App extends React.Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    let cities =  await axios.get(`https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`);
-    this.setState({
-      cityResults: cities.data
-    })
-  }
+    try {
+      let cities =  await axios.get(`https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`);
+      this.setState({
+        cityResults: cities.data
+      });
+    } catch (error) {
+      this.setState({
+        error: true,
+        errorMessage: `An error occurred! Status code: ${error.response.status}`
+      });
+    };
+  };
 
   render(){
     let cityList = this.state.cityResults.map((city, idx) => {
@@ -42,16 +51,19 @@ class App extends React.Component {
     </ListGroup.Item>
     })
     return (
-      <>
+      <main>
         <h1>Find a City!</h1>
         <form onSubmit={this.handleSubmit}>
           <input type="text" onInput={this.handleCityInput}></input>
           <button type="submit">Explore!</button>
         </form>
-        <ListGroup as="ol" numbered>
-          {cityList}
-        </ListGroup>
-      </>
+        {this.state.error
+          ? <p>{this.state.errorMessage}</p>
+          : <ListGroup as="ol" numbered>
+              {cityList}
+            </ListGroup>
+        }
+      </main>
     );
   }
 }
