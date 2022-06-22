@@ -55,3 +55,13 @@ Start time: 7:15 PM
 Finish time: 8:30 PM
 
 Actual time needed to complete: 1 hour and 15 minutes
+
+Name of feature: Import Weather API
+
+Estimate of time needed to complete: 2 hour
+
+Start time: 8:00 PM
+
+Finish time: 11:00 PM
+
+Actual time needed to complete: 3 hours
