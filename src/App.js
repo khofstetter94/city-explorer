@@ -60,7 +60,7 @@ class App extends React.Component {
         {this.state.error
           ? <p>{this.state.errorMessage}</p>
           : <ListGroup as="ol" numbered>
-              {cityList}
+              {cityList[0]}
             </ListGroup>
         }
       </main>
