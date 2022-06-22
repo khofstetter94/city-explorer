@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Image from 'react-bootstrap/Image'
+import Weather from './Weather';
 import './App.css';
 
 class App extends React.Component {
@@ -25,13 +26,18 @@ class App extends React.Component {
     event.preventDefault();
     try {
       let cities =  await axios.get(`https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`);
+      let topResult = cities.data[0];
+      let forcast = await axios.get(`http://localhost:3001/weather?lat=${topResult.lat}&lon=${topResult.lon}&searchQuery=${this.state.city}`)
       this.setState({
-        cityResults: cities.data
+        cityResults: [topResult],
+        forcast: forcast.data,
+        error: false,
+        errorMessage: null
       });
     } catch (error) {
       this.setState({
         error: true,
-        errorMessage: `An error occurred! Status code: ${error.response.status}`
+        errorMessage: `An error occurred! Status code: ${error.response.status} with message: ${error.response.data}`
       });
     };
   };
@@ -48,6 +54,7 @@ class App extends React.Component {
         Latitude: {city.lat}  Longitude: {city.lon}
       </div>
       <Image src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${city.lat},${city.lon}&zoom=12`} alt="map of city"/>
+      <Weather forcast={this.state.forcast} />
     </ListGroup.Item>
     })
     return (
@@ -60,7 +67,7 @@ class App extends React.Component {
         {this.state.error
           ? <p>{this.state.errorMessage}</p>
           : <ListGroup as="ol" numbered>
-              {cityList[0]}
+              {cityList}
             </ListGroup>
         }
       </main>
