@@ -48,3 +48,8 @@ input {
   background-color: rgb(221, 221, 235);
   height: 25px;
 }
+
+img {
+  height: 400px;
+  width: 300px;
+}

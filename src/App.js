@@ -3,6 +3,7 @@ import axios from 'axios';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Image from 'react-bootstrap/Image'
 import Weather from './Weather';
+import Movies from './Movies';
 import './App.css';
 
 class App extends React.Component {
@@ -11,6 +12,7 @@ class App extends React.Component {
     this.state = {
       city: '',
       cityResults: [],
+      movieResults: [],
       error: false,
       errorMessage: ''
     };
@@ -27,10 +29,12 @@ class App extends React.Component {
     try {
       let cities =  await axios.get(`https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`);
       let topResult = cities.data[0];
-      let forcast = await axios.get(`http://localhost:3001/weather?lat=${topResult.lat}&lon=${topResult.lon}&searchQuery=${this.state.city}`)
+      let forcast = await axios.get(`${process.env.REACT_APP_SERVER}/weather?lat=${topResult.lat}&lon=${topResult.lon}&city=${this.state.city}`)
+      let movies = await axios.get(`${process.env.REACT_APP_SERVER}/movies?city=${this.state.city}`)
       this.setState({
         cityResults: [topResult],
         forcast: forcast.data,
+        movies: movies.data,
         error: false,
         errorMessage: null
       });
@@ -55,6 +59,7 @@ class App extends React.Component {
       </div>
       <Image src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${city.lat},${city.lon}&zoom=12`} alt="map of city"/>
       <Weather forcast={this.state.forcast} />
+      <Movies movies={this.state.movies} />
     </ListGroup.Item>
     })
     return (
