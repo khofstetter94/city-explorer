@@ -65,3 +65,13 @@ Start time: 8:00 PM
 Finish time: 11:00 PM
 
 Actual time needed to complete: 3 hours
+
+Name of feature: Import Movies API
+
+Estimate of time needed to complete: 2 hour
+
+Start time: 8:00 PM
+
+Finish time: 10:00 PM
+
+Actual time needed to complete: 2 hours
