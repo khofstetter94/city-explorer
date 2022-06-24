@@ -1,6 +1,6 @@
 body {
-  background-color: lightgreen;
-  color: rgb(69, 69, 154);
+  background-color: antiquewhite;
+  color: cadetblue;
   display: flex;
   justify-content: center;
 }
@@ -9,12 +9,17 @@ main {
  text-align: center;
  display: flex;
  flex-direction: column;
+ justify-content: center;
 }
 
 h1 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 70px;
   margin-bottom: 0px;
+}
+
+.mapimg {
+  margin-left: 310px;
 }
 
 ol {
@@ -26,7 +31,7 @@ ol {
 li {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  justify-content: center;
   line-height: 30px;
   margin-top: 20px;
   padding: 5px;
@@ -38,18 +43,30 @@ li {
 }
 
 button {
-  background-color: rgb(69, 69, 154);
+  background-color: cadetblue;
   color: white;
   margin-left: 10px;
   height: 25px
 }
 
 input {
-  background-color: rgb(221, 221, 235);
+  background-color: azure;
   height: 25px;
 }
 
 img {
-  height: 400px;
-  width: 300px;
+ width: min-content;
+}
+
+.movieimg {
+  margin-left: 335px;
+}
+
+.movietitle {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.moviebullet {
+  list-style-type: circle;
 }
