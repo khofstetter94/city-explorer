@@ -1,6 +1,6 @@
 body {
-  background-color: lightgreen;
-  color: rgb(69, 69, 154);
+  background-color: antiquewhite;
+  color: cadetblue;
   display: flex;
   justify-content: center;
 }
@@ -9,6 +9,7 @@ main {
  text-align: center;
  display: flex;
  flex-direction: column;
+ justify-content: center;
 }
 
 h1 {
@@ -26,30 +27,70 @@ ol {
 li {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
-  line-height: 30px;
+  justify-content: center;
+  line-height: 20px;
   margin-top: 20px;
+  margin-bottom: 20px;
   padding: 5px;
 }
 
 .fw-bold {
   font-size: x-large;
   font-weight: bold;
+  margin-bottom: 15px;
 }
 
 button {
-  background-color: rgb(69, 69, 154);
+  background-color: cadetblue;
   color: white;
   margin-left: 10px;
   height: 25px
 }
 
 input {
-  background-color: rgb(221, 221, 235);
+  background-color: azure;
   height: 25px;
 }
 
+.mapimg {
+  margin-top: 20px;
+}
+
 img {
-  height: 400px;
-  width: 300px;
+ width: min-content;
+}
+
+.weathersection {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.moviesection {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.list-group-flush {
+  list-style-type: circle;
+  margin-bottom: 20px;
+}
+
+.movietitle {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.card {
+  border: 5px solid grey;
+  margin-bottom: 20px;
+}
+
+.movieimg {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.moviedescription {
+  margin-left: 20px;
+  margin-right: 20px;
 }
