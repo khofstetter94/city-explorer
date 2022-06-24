@@ -26,6 +26,8 @@ Creating a React app to be able to grab information for different cities
 
 ![WRRC 2](./img/WRRC2.jpeg)
 
+![WRRC 3](./img/WRRC3.jpg)
+
 Name of feature: Locations
 
 Estimate of time needed to complete: 3 hours
@@ -73,5 +75,15 @@ Estimate of time needed to complete: 2 hour
 Start time: 8:00 PM
 
 Finish time: 10:00 PM
+
+Actual time needed to complete: 2 hours
+
+Name of feature: Create nested components
+
+Estimate of time needed to complete: 3 hours
+
+Start time: 4:00PM
+
+Finish time: 6:00PM
 
 Actual time needed to complete: 2 hours
