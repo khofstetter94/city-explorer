@@ -58,7 +58,9 @@ class App extends React.Component {
         Latitude: {city.lat}  Longitude: {city.lon}
       </div>
       <Image className='mapimg' src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${city.lat},${city.lon}&zoom=12`} alt="map of city"/>
+      <p className='weathersection'>View the 5 day forcast for this city:</p>
       <Weather forcast={this.state.forcast} />
+      <p className='moviesection'>Movies related to this city:</p>
       <Movies movies={this.state.movies} />
     </ListGroup.Item>
     })
