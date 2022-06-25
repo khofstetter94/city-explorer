@@ -28,6 +28,8 @@ Creating a React app to be able to grab information for different cities
 
 ![WRRC 3](./img/WRRC3.jpg)
 
+![WRRC 4](./img/finalWRRC.jpg)
+
 Name of feature: Locations
 
 Estimate of time needed to complete: 3 hours
